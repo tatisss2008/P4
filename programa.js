@@ -32,6 +32,33 @@ function construirFilas(){
         //for (let i=0; i<window.sessionStorage.length; i++)
         for (let i=0; i<miFuente.length; i++)
         {
+
+            //v3
+            /*
+            let cuerpoTable=document.getElementById("cuerpoTabla");
+            
+            let file=cuerpoTable.insertRow(i);
+            let celda=file.insertCell(0);
+            let texto=document.createTextNode(miFuente.key(i));
+
+            celda.appendChild(texto);
+
+            celda=file.insertCell(1);
+            texto=document.createTextNode(miFuente.getItem(miFuente.key(i)));
+            celda.appendChild(texto);
+            */
+
+            //V2 - 
+            /*
+            let cuerpoTable = document.getElementById("cuerpoTabla");
+            let clave=miFuente.key(i);
+            let valor= miFuente.getItem(miFuente.key(i));
+
+            cuerpoTable.innerHTML=cuerpoTable.innerHTML+ `<tr><td>${clave}</td><td>${valor}</td></tr>`;
+            */
+            
+            //V1
+            
             let cuerpoTable = document.getElementById("cuerpoTabla");
             let fila=document.createElement("tr");
 
@@ -50,6 +77,7 @@ function construirFilas(){
             fila.appendChild(celda);
 
             cuerpoTable.appendChild(fila);
+            
 
         }
     }
