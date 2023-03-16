@@ -8,18 +8,60 @@
 <body>
     <form action="procesar.html" method="get">
         <fieldset>
-            <legend>Controles del formulario</legend>
+            <legend><b>Controles del formulario</b></legend>
             <label for="usuario">Usuario: </label>
-            <input type="text" value="AnaM" id="usuario" name="usuario" size="30" placeholder="Ingrese usuario" pattern="[A-Z][a-z]{5}"/>
+            <input type="text" value="AnaM" id="usuario" name="usuario" size="30" placeholder="Ingrese usuario" pattern="[A-Za-z]{0,5}" title="Ingresar nombre de max 5 letras"/>
 
             <br>
-            <label for="correo">Correo:</label>
+            <label for="correo">Correo: </label>
             <input type="email" id="correo" name="correo" size="40" multiple />
 
             <br>
-            <label for="telefono">Telefono:</label>
-            <input type="tel" id="telefono" name="telefono" size="10" multiple />
+            <label for="telefono">Telefono: </label>
+            <input type="tel" id="telefono" name="telefono" size="10" required />
+
+            <br>
+            <label for="fecha">Fecha: </label>
+            <input type="date" id="fecha" nombre="fecha" />
+
+            <br>
+            <label for="joven">Joven </label>
+            <input type="radio" id="joven" nombre="edad" value="0-25" >
+            <label for="edad">Adulto</label>
+            <input type="radio" id="adulto" nombre="edad" value="26-55">
+            <label for="edad">Adulto Mayor</label>
+            <input type="radio" id="viejo" nombre="edad" value=">55">
+
+            <br>
+            <label for="rango">Rango: </label>
+            <input type="range" min="0" max="100" id="ingreso" name="ingreso">
+
+            <br>
+            <label for="terminos">Terminos: </label>
+            <input type="checkbox" id="terminos" nombre="terminos" value="si" >
+            
+            <br>
+            <label for="pais">Pais: </label>
+            <select id="pais" name="pais">
+                <option value="co" selected>Colombia</option>
+                <option value="br">Brasil</option>
+                <option value="cr">Canada</option>
+                <option value="ec">Ecuador</option>
+            </select>
+            
+            <br>
+            <textarea name="datos" id="datos" cols="30" rows="10"></textarea>
+
+            <br>
+            <button type="reset">Borrar</button>
+            <button type="submit">Enviar</button>
+
+            <button type="button" onclick="mostrarMensaje()">Boton</button>
+            <button type="button" id="otroBoton">Boton2</button>
+
+            <!-- <input type="submit"> -->
         </fieldset>
     </form>
+    <script src="program.js"></script>
 </body>
 </html>
